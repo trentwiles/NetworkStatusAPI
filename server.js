@@ -23,3 +23,8 @@ test('build version test', async (t) => {
     const r =  await torRoute("/details") 
     assert.strictEqual("0.4.8.10",  r["build_version"]);
 });
+
+test('general relays test', async (t) => {
+    const r =  await torRoute("/details?type=relays") 
+    assert.strictEqual("0.4.8.10",  r["build_version"]);
+});
