@@ -1,8 +1,14 @@
 const axios = require('axios');
+const env = require('dotenv')
 
-async function req(url){
-    const blah = await axios.get(url);
-    console.log(blah.data)
+env.config()
+
+var username = process.env.TOR_API_USERNAME
+var password = process.env.TOR_API_PASSWORD
+
+async function torRoute(path){
+    const blah = await axios.get(`https://metrics-api.torproject.org${path}`, {auth: { username: username, password: password }});
+    console.log(blah)
 }
 
-console.log(req("https://api.glitch.com"))
+torRoute("/details?type=relay&running=true")
