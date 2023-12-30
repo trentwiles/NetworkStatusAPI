@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/trentwiles/NetworkStatusAPI/issues"
   },
-  "homepage": "https://github.com/trentwiles/NetworkStatusAPI#readme"
+  "homepage": "https://github.com/trentwiles/NetworkStatusAPI#readme",
+  "dependencies": {
+    "axios": "^1.6.3"
+  }
 }
